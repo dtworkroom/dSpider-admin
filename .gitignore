@@ -46,3 +46,9 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+.idea/
+README.md
+build.config.js
+gulpfile.js
+package.json
+src/
