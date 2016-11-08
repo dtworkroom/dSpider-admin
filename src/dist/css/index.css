@@ -1,0 +1,118 @@
+/*@import url(https://fonts.googleapis.com/css?family=Raleway:100,300,400,600);*/
+* {
+  margin: 0;
+  padding: 0; }
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../font/raleway.woff) format("woff"); }
+
+html {
+  font-size: 10px;
+  -webkit-user-select: none;
+  width: 100%;
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font: 1.6rem  Raleway sans-serif;
+  background: rgba(157, 192, 249, 0.2);
+  color: #333; }
+
+/*div {width:500px;margin:0 auto;}*/
+.text1, .text2, .text3, .text4 {
+  visibility: hidden; }
+
+.text1 {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 5rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  color: #000;
+  color: #135e94; }
+
+.text2, .text3 {
+  letter-spacing: 3px;
+  padding-top: 30px;
+  text-align: center; }
+
+.text4 {
+  margin-top: 50px;
+  text-align: center;
+  color: #135e94;
+  font-size: 1.6rem; }
+
+.sky {
+  height: 100%;
+  width: 100%;
+  top: -50px;
+  background: rgba(0, 127, 213, 0.46);
+  position: absolute;
+  overflow: hidden; }
+
+@-webkit-keyframes cloud_1 {
+  0% {
+    left: 100%; }
+  100% {
+    left: -1477px; } }
+
+@keyframes cloud_1 {
+  0% {
+    left: 100%; }
+  100% {
+    left: -1477px; } }
+
+@-webkit-keyframes cloud_2 {
+  0% {
+    left: 100%; }
+  100% {
+    left: -1477px; } }
+
+@keyframes cloud_2 {
+  0% {
+    left: 100%; }
+  100% {
+    left: -1477px; } }
+
+@-webkit-keyframes cloud_3 {
+  0% {
+    left: 100%; }
+  100% {
+    left: -1477px; } }
+
+@keyframes cloud_3 {
+  0% {
+    left: 100%; }
+  100% {
+    left: -1477px; } }
+
+.sky div {
+  position: absolute;
+  height: 100%;
+  width: 1477px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  /*background-size:100% 50%;*/ }
+
+.clouds_1 {
+  background: url(../img/cloud_1.png) no-repeat;
+  -webkit-animation: cloud_1 15s linear infinite;
+          animation: cloud_1 15s linear infinite; }
+
+.clouds_2 {
+  background: url(../img/cloud_2.png) no-repeat;
+  -webkit-animation: cloud_2 20s linear infinite;
+          animation: cloud_2 20s linear infinite;
+  top: -10px; }
+
+.clouds_3 {
+  background: url(../img/cloud_3.png) no-repeat;
+  -webkit-animation: cloud_3 12s linear infinite;
+          animation: cloud_3 12s linear infinite; }
