@@ -6,15 +6,39 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui"/>
     <meta name="screen-orientation" content="portrait">
     <meta name="x5-fullscreen" content="true">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="full-screen" content="yes">
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet"  href="dist/css/index.css">
+    <script src="//cdn.bootcss.com/vue/2.1.0/vue.js"></script>
+    <link rel="stylesheet" href="../../../../../../Library/WebServer/Documents/dSpider-admin_/src/dist/css/index.css">
 </head>
 <body>
 <div>
-
+ <div id="config">
+    <template>
+        <div>
+            <div>爬取数量:</div>
+            <input type="text" v-model="config.email.count" placeholder="">
+        </div>
+    </template>
+ </div>
 </div>
-<script src="dist/js/index.js"></script>
+
+<script src="../../../../../../Library/WebServer/Documents/dSpider-admin_/src/dist/js/index.js"></script>
+<script>
+var config;
+var app= new Vue({
+    el: '#config',
+    data: {
+        config: config
+    },
+    methods: {}
+});
+$.get("testData/config.json").done(function(data){
+
+   app.config=config=JSON.parse(data)
+})
+
+</script>
 </body>
 </html>
