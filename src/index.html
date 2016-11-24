@@ -10,35 +10,65 @@
     <meta name="full-screen" content="yes">
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/vue/2.1.0/vue.js"></script>
-    <link rel="stylesheet" href="../../../../../../Library/WebServer/Documents/dSpider-admin_/src/dist/css/index.css">
+    <link rel="stylesheet" href="dist/css/index.css">
+    <style>
+        .title{
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        button{margin-top: 20px}
+    </style>
 </head>
 <body>
 <div>
  <div id="config">
-    <template>
-        <div>
-            <div>爬取数量:</div>
-            <input type="text" v-model="config.email.count" placeholder="">
-        </div>
-    </template>
+
+    <div v-if="config.email">
+        <div class="title">Email</div>
+        <div>爬取数量:</div>
+        <input type="text" v-model="config.email.count" placeholder="">
+        <div>爬取关键字:</div>
+        <input type="text" v-model="config.email.wd" placeholder="">
+    </div>
+     <div v-if="config.jd">
+         <div class="title">京东</div>
+         <div>爬取数量:</div>
+         <input type="text" v-model="config.jd.count" placeholder="">
+         <div>爬取时间段(月份):</div>
+         <input type="text" v-model="config.jd.month" placeholder="">
+     </div>
+     <div v-if="config.yidong">
+         <div class="title">移动</div>
+         <div>爬取数量:</div>
+         <input type="text" v-model="config.yidong.count" placeholder="">
+         <div>爬取时间段(月份):</div>
+         <input type="text" v-model="config.yidong.month" placeholder="">
+     </div>
+     <button @click="add">添加移动账单爬取功能</button>
+     <button @click="submit">保存</button>
  </div>
 </div>
 
-<script src="../../../../../../Library/WebServer/Documents/dSpider-admin_/src/dist/js/index.js"></script>
+<script src="dist/js/index.js"></script>
 <script>
-var config;
+var config={};
 var app= new Vue({
     el: '#config',
     data: {
         config: config
     },
-    methods: {}
+    methods: {
+       add:function(){
+           this.$set(config,"yidong",{count:20,month:12})
+       },
+        submit:function(){
+            $.post("xx",{config:config}).done(function(){
+                console.log("保存成功")
+            })
+        }
+    }
 });
-$.get("testData/config.json").done(function(data){
-
-   app.config=config=JSON.parse(data)
-})
-
 </script>
 </body>
 </html>
